@@ -12,7 +12,7 @@ const StateContext = createContext();
 
 export const StateContextProvider = ({ children }) => {
   const { contract } = useContract(
-    "0xeA3eD2BEb51651AE5bCf192F853C25a8f73e5126"
+    "0x8C8dfCcce713D487E7C6b246643Bac1970b4C382"
   );
 
   const { mutateAsync: createNFT } = useContractWrite(contract, "createNFT");
@@ -77,6 +77,10 @@ export const StateContextProvider = ({ children }) => {
     return parsedNft;
   };
 
+  const buyNFT = async (id) => {
+    await contract.call("buyNft", id);
+  };
+
   return (
     <StateContext.Provider
       value={{
@@ -87,6 +91,7 @@ export const StateContextProvider = ({ children }) => {
         getNFTs,
         getUserNFTs,
         getSingleNFT,
+        buyNFT,
       }}
     >
       {children}

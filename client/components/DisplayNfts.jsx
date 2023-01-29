@@ -3,7 +3,7 @@ import NftCard from "./NftCard";
 
 const DisplayNfts = ({ nfts }) => {
   return (
-    <div className="flex flex-col md:flex-row w-full items-center justify-start space-x-10">
+    <div className="flex flex-col md:flex-row w-full items-center justify-between  flex-wrap">
       {nfts.map((nft, i) => (
         <NftCard nft={nft} key={i} />
       ))}

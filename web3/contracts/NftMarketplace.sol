@@ -35,10 +35,8 @@ contract NftMarketplace {
     }
 
     function buyNft(uint256 _id) public payable {
-        uint256 amount = msg.value;
-
         NFT storage nft = nfts[_id];
-        payable(nft.owner).call{value: amount};
+        payable(nft.owner).call{value: nft.price};
 
         nft.owner = msg.sender;
     }

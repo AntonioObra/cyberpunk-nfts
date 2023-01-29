@@ -9,7 +9,7 @@ export default function SingleNFT() {
   const router = useRouter();
   const [NFT, setNFT] = useState([]);
 
-  const { getSingleNFT, address, contract } = useStateContext();
+  const { getSingleNFT, address, contract, buyNFT } = useStateContext();
   const { nftID } = router.query;
 
   const fetchNFT = async () => {
@@ -43,6 +43,10 @@ export default function SingleNFT() {
             className="w-1/2 h-[600px] object-cover"
           />
         </div>
+
+        <button className="py-3 px-5 bg-rose-300" onClick={() => buyNFT(nftID)}>
+          Buy
+        </button>
       </section>
     </main>
   );
