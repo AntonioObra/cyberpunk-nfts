@@ -1,12 +1,31 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
-import { Navbar } from "@/components";
-
-const inter = Inter({ subsets: ["latin"] });
+import Navbar from "../components/Navbar";
+import { useEffect, useState } from "react";
+import { useStateContext } from "../context";
+import { useContractRead } from "@thirdweb-dev/react";
+import { DisplayNfts } from "../components";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [nfts, setNfts] = useState([]);
+
+  const { address, contract, getNFTs } = useStateContext();
+
+  const fetchNFTs = async () => {
+    setIsLoading(true);
+    const data = await getNFTs();
+
+    setNfts(data);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    if (contract) fetchNFTs();
+  }, [address, contract]);
+
+  console.log(nfts);
+
   return (
     <main className="min-h-screen  ">
       <Head>
@@ -18,8 +37,8 @@ export default function Home() {
 
       <Navbar />
 
-      <section className="container mx-auto mt-14 max-w-7xl">
-        <div className="flex flex-col justify-between items-top md:flex-row">
+      <section className="container mx-auto mt-14 ">
+        <div className="flex flex-col justify-between items-top md:flex-row max-w-7xl mx-auto">
           <div className="flex flex-col space-y-5 w-full md:w-1/2">
             <h1 className="text-7xl font-bold lowercase tracking-wide text-white leading-none">
               your favourite characters in, new
@@ -32,9 +51,15 @@ export default function Home() {
               alt="main image"
               width={500}
               height={500}
-              className="rounded-2xl  shadow-[5px_5px_0px_0px_#fde68a]"
+              className="rounded-2xl  shadow-[5px_5px_0px_0px_#fde68a] object-cover"
             />
           </div>
+        </div>
+      </section>
+
+      <section className="container mx-auto my-14">
+        <div className="flex flex-col justify-between items-top md:flex-row max-w-7xl mx-auto">
+          <DisplayNfts nfts={nfts} />
         </div>
       </section>
     </main>
