@@ -3,17 +3,18 @@ import Image from "next/image";
 import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
 import { useStateContext } from "../context";
+
 import { DisplayNfts } from "../components";
 
-export default function Home() {
+export default function ProfilePage() {
   const [isLoading, setIsLoading] = useState(false);
   const [nfts, setNfts] = useState([]);
 
-  const { address, contract, getNFTs } = useStateContext();
+  const { address, contract, getUserNFTs } = useStateContext();
 
   const fetchNFTs = async () => {
     setIsLoading(true);
-    const data = await getNFTs();
+    const data = await getUserNFTs();
 
     setNfts(data);
     setIsLoading(false);
@@ -35,26 +36,6 @@ export default function Home() {
       </Head>
 
       <Navbar />
-
-      <section className="container mx-auto mt-14 ">
-        <div className="flex flex-col justify-between items-top md:flex-row max-w-7xl mx-auto">
-          <div className="flex flex-col space-y-5 w-full md:w-1/2">
-            <h1 className="text-7xl font-bold lowercase tracking-wide text-white leading-none">
-              your favourite characters in, new
-              <span className="text-rose-500"> cyberpunk style</span>
-            </h1>
-          </div>
-          <div className="w-full md:w-1/2 flex justify-end">
-            <Image
-              src="https://cdn.discordapp.com/attachments/1066511950047084564/1069280098701819975/Obra_ellie_from_the_last_of_us_in_cyberpunk_style_7cdd8756-0290-46df-9089-54b4696230fa.png"
-              alt="main image"
-              width={500}
-              height={500}
-              className="rounded-2xl  shadow-[5px_5px_0px_0px_#fde68a] object-cover"
-            />
-          </div>
-        </div>
-      </section>
 
       <section className="container mx-auto my-14">
         <div className="flex flex-col justify-between items-top md:flex-row max-w-7xl mx-auto">

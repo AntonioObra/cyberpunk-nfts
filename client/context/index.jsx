@@ -22,9 +22,11 @@ export const StateContextProvider = ({ children }) => {
 
   const publishNFT = async (form) => {
     try {
+      console.log(form);
+
       const data = await createNFT([
         address,
-        form.name,
+        form.title,
         form.description,
         form.price,
         form.image,
@@ -53,6 +55,28 @@ export const StateContextProvider = ({ children }) => {
     return parsedNfts;
   };
 
+  const getUserNFTs = async () => {
+    const allNfts = await getNFTs();
+    const userNfts = allNfts.filter((nft) => nft.owner === address);
+
+    return userNfts;
+  };
+
+  const getSingleNFT = async (id) => {
+    const nft = await contract.call("nfts", id);
+
+    const parsedNft = {
+      id,
+      owner: nft.owner,
+      name: nft.title,
+      description: nft.description,
+      price: ethers.utils.formatEther(nft.price),
+      image: nft.image,
+    };
+
+    return parsedNft;
+  };
+
   return (
     <StateContext.Provider
       value={{
@@ -61,6 +85,8 @@ export const StateContextProvider = ({ children }) => {
         createNFT: publishNFT,
         connect,
         getNFTs,
+        getUserNFTs,
+        getSingleNFT,
       }}
     >
       {children}
