@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="container mx-auto ">
-        <div className="flex justify-between items-center py-5 max-w-7xl mx-auto">
+        <div className="flex justify-between items-center py-5 ">
           <div className="flex justify-start items-center space-x-10">
             <Link href="/">
               <h5 className="font-semibold text-xl  leading-10 tracking-wide text-amber-200">
