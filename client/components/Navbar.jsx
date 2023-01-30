@@ -20,12 +20,11 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="flex justify-end items-center space-x-10">
-            <Link href="/profile">
-              <p className="text-xl text-white">Profile</p>
-            </Link>
-
             {address ? (
               <>
+                <Link href="/profile">
+                  <p className="text-xl text-white">Profile</p>
+                </Link>
                 <p className="text-xl text-white">
                   Hy, <span className="truncate">{address}</span>
                 </p>

@@ -23,8 +23,6 @@ export default function Home() {
     if (contract) fetchNFTs();
   }, [address, contract]);
 
-  console.log(nfts);
-
   return (
     <main className="min-h-screen  ">
       <Head>
