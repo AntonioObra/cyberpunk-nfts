@@ -9,7 +9,7 @@ body {
 }
 
 ::selection {
-  @apply bg-rose-500 text-white;
+  @apply bg-violet-600 text-white;
 }
 .outline-title {
   color: #000000;
