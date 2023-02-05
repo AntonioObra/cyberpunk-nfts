@@ -41,7 +41,7 @@ export default function SingleNFT() {
               alt={NFT.name}
               width={1000}
               height={750}
-              className="w-full h-full object-cover rounded-3xl shadow-[0_20px_50px_rgba(109,_40,_217,_0.35)]"
+              className="w-full h-full object-cover rounded-3xl shadow-[0_20px_50px_rgba(109,_40,_217,_0.15)]"
             />
           </div>
           <div className="flex flex-col  h-1/5 justify-between items-start  w-1/2">
@@ -72,7 +72,7 @@ export default function SingleNFT() {
             </p>
 
             <button
-              className="bg-rose-600 shadow-[0_20px_50px_rgba(225,_29,_72,_0.2)] text-white font-bold py-4 px-10 rounded-full mt-10 w-fit "
+              className="border-2 border-rose-600 shadow-2xl shadow-rose-500/30 text-white font-bold py-4 px-10 rounded-full mt-10 w-fit hover:bg-rose-600 hover:shadow-rose-500/60 duration-300 transition-all"
               onClick={() => buyNFT(nftID)}
             >
               Buy
