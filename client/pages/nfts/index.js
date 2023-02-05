@@ -37,7 +37,7 @@ export default function NFTS() {
 
       <section className="container mx-auto my-10">
         <div className="flex flex-col justify-between items-top  ">
-          <h1 className="text-8xl  font-bold  tracking-wide text-white leading-none text-left">
+          <h1 className="text-4xl text-center md:text-6xl lg:text-8xl  font-bold  tracking-wide text-white leading-none lg:text-left">
             Explore our NFTs from <br></br>{" "}
             <span className="text-rose-700 ">cyberpunk</span> collection
           </h1>
