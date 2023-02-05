@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Navbar } from "../components";
+import { Footer, Navbar } from "../components";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -36,6 +36,8 @@ export default function NotFoundPage() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

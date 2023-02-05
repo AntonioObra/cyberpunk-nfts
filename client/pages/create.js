@@ -46,7 +46,7 @@ export default function CreateNFT() {
       <div className="text-white h-screen">
         <Navbar />
         <div className="max-w-6xl mx-auto flex align-center justify-center h-auto pt-40">
-          <h1 className="text-8xl font-bold  tracking-wide text-white leading-none text-center  ">
+          <h1 className="text-7xl font-bold  tracking-wide text-white leading-none text-center  ">
             Please connect your
             <span className="text-rose-500">
               {" "}

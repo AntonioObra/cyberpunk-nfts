@@ -3,7 +3,7 @@ import Image from "next/image";
 import Navbar from "../../components/Navbar";
 import { useEffect, useState } from "react";
 import { useStateContext } from "../../context";
-import { DisplayNfts } from "../../components";
+import { DisplayNfts, Footer } from "../../components";
 import Link from "next/link";
 
 export default function NFTS() {
@@ -83,6 +83,8 @@ export default function NFTS() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 }

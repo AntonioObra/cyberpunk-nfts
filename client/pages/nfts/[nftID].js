@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useStateContext } from "../../context";
 import { useEffect, useState } from "react";
 import Head from "next/head";
-import { Navbar } from "../../components";
+import { Footer, Navbar } from "../../components";
 import Image from "next/image";
 
 export default function SingleNFT() {
@@ -80,6 +80,8 @@ export default function SingleNFT() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 }
