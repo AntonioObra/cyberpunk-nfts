@@ -25,7 +25,21 @@ export default function ProfilePage() {
     if (contract) fetchNFTs();
   }, [address, contract]);
 
-  console.log(nfts);
+  if (!address)
+    return (
+      <div className="text-white h-screen">
+        <Navbar />
+        <div className="max-w-6xl mx-auto flex align-center justify-center h-auto pt-40">
+          <h1 className="text-7xl font-bold  tracking-wide text-white leading-none text-center  ">
+            Please connect your
+            <span className="text-violet-500">
+              {" "}
+              metamask wallet
+            </span> <br></br> in order to see your profile.
+          </h1>
+        </div>
+      </div>
+    );
 
   return (
     <main className="h-screen  ">
@@ -38,7 +52,7 @@ export default function ProfilePage() {
 
       <Navbar />
 
-      <section className="container mx-auto h-1/2 ">
+      <section className="container mx-auto h-1/2 mt-10 ">
         <div className="relative h-full ">
           <Image
             src="/images/rainAlley.png"
@@ -47,6 +61,7 @@ export default function ProfilePage() {
             height={2000}
             className="rounded-3xl w-full h-4/5 object-cover object-center "
           />
+          <div className="absolute bottom-0 left-0 w-full h-1/2 z-0 bg-gradient-to-t from-black to-transparent"></div>
           <div className="absolute  bottom-0 left-20 rounded-3xl z-10">
             <div className="flex flex-col justify-start items-top h-full">
               <Image

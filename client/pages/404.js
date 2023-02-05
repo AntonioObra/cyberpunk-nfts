@@ -12,15 +12,17 @@ export default function NotFoundPage() {
 
       <Navbar />
 
-      <section className="h-screen ">
-        <div className="absolute top-0 ¸left-0 w-1/2 h-screen z-0">
+      <section className="h-screen  ">
+        <div className="absolute top-0 left-0 w-1/2 h-screen z-0">
           <Image
             src="/images/notFound.png"
             alt="Header Image"
             width={1500}
             height={1500}
-            className="object-cover h-full w-full z-0"
+            className="object-cover h-full w-full z-0 "
           />
+
+          <div className="absolute top-0 left-0 w-full h-1/2 z-0 bg-gradient-to-b from-black to-transparent"></div>
         </div>
         <div className="flex container   mx-auto relative">
           <div className="absolute top-0  right-0 w-1/2  mt-28 flex flex-col ">

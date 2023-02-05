@@ -69,6 +69,7 @@ export default function Home() {
             height={1500}
             className="object-cover h-full w-full z-0"
           />
+          <div className="absolute top-0 left-0 w-full h-1/2 z-0 bg-gradient-to-b from-black to-transparent"></div>
         </div>
       </section>
 

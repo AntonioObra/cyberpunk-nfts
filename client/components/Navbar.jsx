@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav>
       <div className="container mx-auto">
         <div className="flex justify-between items-center py-5  ">
-          <div className="flex justify-start items-center space-x-10 z-10">
+          <div className="flex justify-start items-center space-x-10 z-10 ">
             <Link href="/">
               <h5 className="font-semibold text-xl  leading-10 tracking-wide text-rose-600">
                 cyberpunk nfts
@@ -19,19 +19,18 @@ const Navbar = () => {
               <p className="text-xl text-white">Create</p>
             </Link>
           </div>
-          <div className="flex justify-end items-center space-x-10 z-10">
+          <div className="flex justify-end items-center z-10 ">
             {address ? (
               <>
                 <Link href="/profile">
-                  <p className="text-xl text-white">Profile</p>
+                  <button className="bg-blue-600 border-2 border-blue-600 shadow-[0_20px_50px_rgba(96,_165,_250,_0.2)] text-white font-bold py-3 px-7 rounded-full  w-fit hover:border-2 hover:border-blue-600 hover:bg-transparent hover:shadow-[0_20px_50px_rgba(96,_165,_250,_0.5)] duration-300 transition-all ">
+                    Profile
+                  </button>
                 </Link>
-                <p className="text-xl text-white">
-                  Hy, <span className="truncate">{address}</span>
-                </p>
               </>
             ) : (
               <button
-                className=" bg-violet-700 shadow-[0_20px_50px_rgba(109,_40,_217,_0.7)] py-3 px-5 rounded-3xl text-white font-semibold"
+                className="bg-violet-600 border-2 border-violet-600 shadow-[0_20px_50px_rgba(109,_40,_217,_0.2)] text-white font-bold py-3 px-7 rounded-full  w-fit hover:border-2 hover:border-violet-600 hover:bg-transparent hover:shadow-[0_20px_50px_rgba(109,_40,_217,_0.5)] duration-300 transition-all"
                 onClick={() => connect()}
               >
                 Connect
