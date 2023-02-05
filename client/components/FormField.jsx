@@ -11,7 +11,7 @@ const FormField = ({
   return (
     <label className="flex flex-1 flex-col w-full">
       {labelName && (
-        <span className="font-epilouge font-medium text-[14px] leading-[22px] text-[#808191] mb-[10px]">
+        <span className="font-epilouge font-medium text-[14px] leading-[22px] text-gray-200 mb-[10px]">
           {labelName}
         </span>
       )}

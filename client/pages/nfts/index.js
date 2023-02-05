@@ -1,12 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
-import Navbar from "../components/Navbar";
+import Navbar from "../../components/Navbar";
 import { useEffect, useState } from "react";
-import { useStateContext } from "../context";
-import { DisplayNfts } from "../components";
+import { useStateContext } from "../../context";
+import { DisplayNfts } from "../../components";
 import Link from "next/link";
 
-export default function Home() {
+export default function NFTS() {
   const [isLoading, setIsLoading] = useState(false);
   const [nfts, setNfts] = useState([]);
 

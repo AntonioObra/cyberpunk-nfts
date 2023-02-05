@@ -5,7 +5,7 @@ import Link from "next/link";
 const NftCard = ({ nft }) => {
   return (
     <div className=" w-full md:w-[30%] rounded-3xl overflow-hidden cursor-pointer mb-20 shadow-[0_20px_50px_rgba(109,_40,_217,_0.15)] hover:shadow-[0_20px_50px_rgba(109,_40,_217,_0.3)] transition-all duration-200 ">
-      <Link href={`/nft/${nft.id}`}>
+      <Link href={`/nfts/${nft.id}`}>
         <div className="flex flex-col relative group">
           <Image
             src={nft.image}
