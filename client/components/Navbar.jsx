@@ -10,13 +10,21 @@ const Navbar = () => {
         <div className="flex justify-between items-center py-5  ">
           <div className="flex justify-start items-center space-x-10 z-10 ">
             <Link href="/">
-              <h5 className="font-semibold text-xl  leading-10 tracking-wide text-rose-600">
-                cyberpunk nfts
+              <h5 className="font-semibold text-xl  leading-10 tracking-wide text-white hover:text-rose-600 duration-300 transition-all">
+                Cyberpunk NFTs
+              </h5>
+            </Link>
+
+            <Link href="/nfts">
+              <h5 className="font-semibold text-xl  leading-10 tracking-wide text-white hover:text-rose-600 duration-300 transition-all">
+                Explore
               </h5>
             </Link>
 
             <Link href="/create">
-              <p className="text-xl text-white">Create</p>
+              <h5 className="font-semibold text-xl  leading-10 tracking-wide text-white hover:text-rose-600 duration-300 transition-all">
+                Create
+              </h5>
             </Link>
           </div>
           <div className="flex justify-end items-center z-10 ">
