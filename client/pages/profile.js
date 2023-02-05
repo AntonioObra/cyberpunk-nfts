@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
 import { useStateContext } from "../context";
 
-import { DisplayNfts } from "../components";
+import { DisplayNfts, Footer } from "../components";
 
 export default function ProfilePage() {
   const [isLoading, setIsLoading] = useState(false);
@@ -42,6 +42,8 @@ export default function ProfilePage() {
           <DisplayNfts nfts={nfts} />
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 }

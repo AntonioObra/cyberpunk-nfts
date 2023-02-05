@@ -48,12 +48,12 @@ export default function NFTS() {
             </p>
             <div className="flex justify-start space-x-10">
               <Link href="/nfts">
-                <button className="bg-violet-600 shadow-[0_20px_50px_rgba(109,_40,_217,_0.7)] text-white font-bold py-4 px-10 rounded-full mt-10 w-fit ">
+                <button className="bg-violet-600 border-2 border-violet-600 shadow-[0_20px_50px_rgba(109,_40,_217,_0.2)] text-white font-bold py-4 px-10 rounded-full mt-10 w-fit hover:border-2 hover:border-violet-600 hover:bg-transparent hover:shadow-[0_20px_50px_rgba(109,_40,_217,_0.5)] duration-300 transition-all">
                   Explore
                 </button>
               </Link>
               <Link href="/create">
-                <button className="border-2 border-rose-600 shadow-2xl shadow-rose-500/30 text-white font-bold py-4 px-10 rounded-full mt-10 w-fit ">
+                <button className="border-2 border-rose-600 shadow-2xl shadow-rose-500/30 text-white font-bold py-4 px-10 rounded-full mt-10 w-fit hover:bg-rose-600 hover:shadow-rose-500/60 duration-300 transition-all">
                   Create
                 </button>
               </Link>

@@ -109,9 +109,9 @@ export default function CreateNFT() {
             value={form.image}
             handleChange={(e) => handleFormFieldChange("image", e)}
           />
-          <div className="flex  mt-[40px]">
+          <div>
             <button
-              className=" bg-violet-700 shadow-[0_20px_50px_rgba(109,_40,_217,_0.7)] py-3 px-8 rounded-3xl text-white font-semibold"
+              className="bg-violet-600 border-2 border-violet-600 shadow-[0_20px_50px_rgba(109,_40,_217,_0.2)] text-white font-bold py-4 px-10 rounded-full mt-10 w-fit hover:border-2 hover:border-violet-600 hover:bg-transparent hover:shadow-[0_20px_50px_rgba(109,_40,_217,_0.5)] duration-300 transition-all"
               onClick={() => connect()}
               type="submit"
             >
