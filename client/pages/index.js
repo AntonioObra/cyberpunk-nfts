@@ -63,7 +63,7 @@ export default function Home() {
 
         <div className="absolute top-0 right-0 w-1/2 h-screen z-0">
           <Image
-            src="/images/ellie4.png"
+            src="/images/profile.png"
             alt="Header Image"
             width={1500}
             height={1500}
