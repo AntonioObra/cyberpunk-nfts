@@ -11,9 +11,7 @@ import { ethers } from "ethers";
 const StateContext = createContext();
 
 export const StateContextProvider = ({ children }) => {
-  const { contract } = useContract(
-    "0x8C8dfCcce713D487E7C6b246643Bac1970b4C382"
-  );
+  const { contract } = useContract(process.env.NEXT_PUBLIC_API_URL);
 
   const { mutateAsync: createNFT } = useContractWrite(contract, "createNFT");
 
@@ -50,9 +48,21 @@ export const StateContextProvider = ({ children }) => {
       description: nft.description,
       price: ethers.utils.formatEther(nft.price),
       image: nft.image,
+      isListed: nft.isListed,
+      isShowcase: nft.isShowcase,
+      isHidden: nft.isHidden,
     }));
 
-    return parsedNfts;
+    const allNfts = parsedNfts.filter((nft) => !nft.isHidden || !nft.isListed);
+
+    return allNfts;
+  };
+
+  const getShowcaseNFTs = async () => {
+    const allNfts = await getNFTs();
+    const showcaseNfts = allNfts.filter((nft) => nft.isShowcase);
+
+    return showcaseNfts;
   };
 
   const getUserNFTs = async () => {
@@ -92,6 +102,7 @@ export const StateContextProvider = ({ children }) => {
         getUserNFTs,
         getSingleNFT,
         buyNFT,
+        getShowcaseNFTs,
       }}
     >
       {children}

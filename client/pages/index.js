@@ -10,11 +10,11 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [nfts, setNfts] = useState([]);
 
-  const { address, contract, getNFTs } = useStateContext();
+  const { address, contract, getShowcaseNFTs } = useStateContext();
 
   const fetchNFTs = async () => {
     setIsLoading(true);
-    const data = await getNFTs();
+    const data = await getShowcaseNFTs();
 
     setNfts(data);
     setIsLoading(false);

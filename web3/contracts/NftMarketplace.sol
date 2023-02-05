@@ -8,6 +8,9 @@ contract NftMarketplace {
         string description;
         uint256 price;
         string image;
+        bool isListed;
+        bool isShowcase;
+        bool isHidden;
     }
 
     mapping(uint256 => NFT) public nfts;
@@ -19,7 +22,9 @@ contract NftMarketplace {
         string memory _title,
         string memory _description,
         uint256 _price,
-        string memory _image
+        string memory _image,
+        bool _isListed,
+        bool _isShowcase
     ) public returns (uint256) {
         NFT storage nft = nfts[numberOfNfts];
 
@@ -28,6 +33,9 @@ contract NftMarketplace {
         nft.description = _description;
         nft.price = _price;
         nft.image = _image;
+        nft.isListed = _isListed;
+        nft.isShowcase = _isShowcase;
+        nft.isHidden = false;
 
         numberOfNfts++;
 
@@ -51,5 +59,35 @@ contract NftMarketplace {
         }
 
         return allNfts;
+    }
+
+    function listNFT(uint256 _id) public {
+        require(
+            nfts[_id].owner == msg.sender,
+            "You are not the owner of this NFT"
+        );
+        require(nfts[_id].isListed == false, "This NFT is already listed");
+
+        NFT storage nft = nfts[_id];
+
+        nft.isListed = true;
+    }
+
+    function unlistNFT(uint256 _id) public {
+        require(
+            nfts[_id].owner == msg.sender,
+            "You are not the owner of this NFT"
+        );
+        require(nfts[_id].isListed == true, "This NFT is not listed");
+
+        NFT storage nft = nfts[_id];
+
+        nft.isListed = false;
+    }
+
+    function deleteNFT(uint256 _id) public {
+        NFT storage nft = nfts[_id];
+
+        nft.isHidden = true;
     }
 }
