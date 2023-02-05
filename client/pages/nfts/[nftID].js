@@ -9,7 +9,8 @@ export default function SingleNFT() {
   const router = useRouter();
   const [NFT, setNFT] = useState([]);
 
-  const { getSingleNFT, address, contract, buyNFT } = useStateContext();
+  const { getSingleNFT, address, contract, buyNFT, connect } =
+    useStateContext();
   const { nftID } = router.query;
 
   const fetchNFT = async () => {
@@ -68,15 +69,24 @@ export default function SingleNFT() {
               {NFT.description}
             </p>
             <p className="text-2xl text-left font-bold  tracking-wide text-gray-500 leading-none mt-4 pr-10">
-              Price: {NFT.price} <span className="text-yellow-500">ETH</span>
+              Price: {NFT.price} <span className="text-violet-600">ETH</span>
             </p>
 
-            <button
-              className="border-2 border-rose-600 shadow-2xl shadow-rose-500/30 text-white font-bold py-4 px-10 rounded-full mt-10 w-fit hover:bg-rose-600 hover:shadow-rose-500/60 duration-300 transition-all"
-              onClick={() => buyNFT(nftID)}
-            >
-              Buy
-            </button>
+            {!address ? (
+              <button
+                className="border-2 border-blue-600 shadow-2xl shadow-blue-500/30 text-white font-bold py-4 px-10 rounded-full mt-10 w-fit hover:bg-blue-600 hover:shadow-blue-500/60 duration-300 transition-all"
+                onClick={() => connect()}
+              >
+                Connect
+              </button>
+            ) : (
+              <button
+                className="border-2 border-rose-600 shadow-2xl shadow-rose-500/30 text-white font-bold py-4 px-10 rounded-full mt-10 w-fit hover:bg-rose-600 hover:shadow-rose-500/60 duration-300 transition-all"
+                onClick={() => buyNFT(nftID)}
+              >
+                Buy
+              </button>
+            )}
           </div>
         </div>
       </section>
