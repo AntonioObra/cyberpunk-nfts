@@ -82,6 +82,9 @@ export const StateContextProvider = ({ children }) => {
       description: nft.description,
       price: ethers.utils.formatEther(nft.price),
       image: nft.image,
+      isListed: nft.isListed,
+      isShowcase: nft.isShowcase,
+      isHidden: nft.isHidden,
     };
 
     return parsedNft;
@@ -89,6 +92,14 @@ export const StateContextProvider = ({ children }) => {
 
   const buyNFT = async (id) => {
     await contract.call("buyNft", id);
+  };
+
+  const listNFT = async (id) => {
+    await contract.call("listNFT", id);
+  };
+
+  const unlistNFT = async (id) => {
+    await contract.call("unlistNFT", id);
   };
 
   return (
@@ -103,6 +114,8 @@ export const StateContextProvider = ({ children }) => {
         getSingleNFT,
         buyNFT,
         getShowcaseNFTs,
+        listNFT,
+        unlistNFT,
       }}
     >
       {children}

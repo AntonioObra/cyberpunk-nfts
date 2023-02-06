@@ -9,8 +9,15 @@ export default function SingleNFT() {
   const router = useRouter();
   const [NFT, setNFT] = useState([]);
 
-  const { getSingleNFT, address, contract, buyNFT, connect } =
-    useStateContext();
+  const {
+    getSingleNFT,
+    address,
+    contract,
+    buyNFT,
+    connect,
+    listNFT,
+    unlistNFT,
+  } = useStateContext();
   const { nftID } = router.query;
 
   const fetchNFT = async () => {
@@ -23,6 +30,57 @@ export default function SingleNFT() {
   }, [address, contract]);
 
   console.log(NFT);
+
+  const showButton = () => {
+    if (NFT.isShowcase) {
+      return (
+        <p className="text-2xl text-left font-bold  tracking-wide text-violet-600 leading-none mt-4 pr-10">
+          This NFT is currently in the showcase.
+        </p>
+      );
+    } else {
+      if (!address) {
+        return (
+          <button
+            className="border-2 border-blue-600 shadow-2xl shadow-blue-500/30 text-white font-bold py-4 px-28 rounded-full mt-10 w-fit hover:bg-blue-600 hover:shadow-blue-500/60 duration-300 transition-all md:py-4 md:px-16"
+            onClick={() => connect()}
+          >
+            Connect
+          </button>
+        );
+      } else if (address && NFT.owner === address) {
+        if (NFT.isListed) {
+          return (
+            <button
+              className="border-2 border-violet-600 shadow-2xl shadow-violet-500/30 text-white font-bold py-4 px-28 rounded-full mt-10 w-fit hover:bg-violet-600 hover:shadow-violet-500/60 duration-300 transition-all md:py-4 md:px-16"
+              onClick={() => unlistNFT(nftID)}
+            >
+              Unlist NFT
+            </button>
+          );
+        } else {
+          return (
+            <button
+              className="border-2 border-emerald-600 shadow-2xl shadow-emerald-500/30 text-white font-bold py-4 px-28 rounded-full mt-10 w-fit hover:bg-emerald-600 hover:shadow-emerald-500/60 duration-300 transition-all md:py-4 md:px-16"
+              onClick={() => listNFT(nftID)}
+            >
+              List NFT
+            </button>
+          );
+        }
+      } else {
+        return (
+          <button
+            className="border-2 border-rose-600 shadow-2xl shadow-rose-500/30 text-white font-bold py-4 px-28 rounded-full mt-10 w-fit hover:bg-rose-600 hover:shadow-rose-500/60 duration-300 transition-all md:py-4 md:px-16"
+            onClick={() => buyNFT(nftID)}
+          >
+            Buy
+          </button>
+        );
+      }
+    }
+  };
+
   return (
     <main className=" ">
       <Head>
@@ -91,21 +149,7 @@ export default function SingleNFT() {
               Price: {NFT.price} <span className="text-violet-600">ETH</span>
             </p>
             <div className="flex justify-center mx-auto md:justify-end md:mx-0">
-              {!address ? (
-                <button
-                  className="border-2 border-blue-600 shadow-2xl shadow-blue-500/30 text-white font-bold py-4 px-28 rounded-full mt-10 w-fit hover:bg-blue-600 hover:shadow-blue-500/60 duration-300 transition-all md:py-4 md:px-16"
-                  onClick={() => connect()}
-                >
-                  Connect
-                </button>
-              ) : (
-                <button
-                  className="border-2 border-rose-600 shadow-2xl shadow-rose-500/30 text-white font-bold py-4 px-28 rounded-full mt-10 w-fit hover:bg-rose-600 hover:shadow-rose-500/60 duration-300 transition-all md:py-4 md:px-16"
-                  onClick={() => buyNFT(nftID)}
-                >
-                  Buy
-                </button>
-              )}
+              {showButton()}
             </div>
           </div>
         </div>
