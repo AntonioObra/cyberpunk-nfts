@@ -34,9 +34,12 @@ export default function SingleNFT() {
 
       <Navbar />
 
-      <section className="container mx-auto mt-14 max-h-screen">
-        <div className="flex flex-col justify-between items-top md:flex-row  mx-auto space-x-10  h-screen">
-          <div className="flex w-1/2 h-2/3">
+      <section className="container mx-auto mt-14 min-h-screen md:max-h-screen px-5 md:px-0">
+        <div className="flex flex-col justify-between items-top md:flex-row space-y-10  mx-auto md:space-y-0 md:space-x-10  min-h-screen md:h-screen">
+          <h1 className="text-6xl  font-bold  tracking-wide text-white leading-none text-left md:hidden">
+            {NFT.name}
+          </h1>
+          <div className="flex w-full md:w-1/2 md:h-2/3">
             <Image
               src={NFT.image}
               alt={NFT.name}
@@ -45,12 +48,12 @@ export default function SingleNFT() {
               className="w-full h-full object-cover rounded-3xl shadow-[0_20px_50px_rgba(109,_40,_217,_0.15)]"
             />
           </div>
-          <div className="flex flex-col  h-1/5 justify-between items-start  w-1/2">
-            <h1 className="text-6xl  font-bold  tracking-wide text-white leading-none text-left ">
+          <div className="flex flex-col   w-full justify-between items-start  md:w-1/2">
+            <h1 className="hidden text-6xl  font-bold  tracking-wide text-white leading-none text-left md:block ">
               {NFT.name}
             </h1>
 
-            <div className="flex mt-5 space-x-5">
+            <div className="flex md:mt-5 space-x-5">
               <Image
                 src="/images/ellie3.png"
                 alt="Owner Icon"
@@ -58,8 +61,16 @@ export default function SingleNFT() {
                 width={50}
                 className="rounded-full"
               />
-              <p className="text-2xl text-left font-bold  tracking-wide text-gray-500 leading-none mt-4 pr-10">
-                {NFT.owner}
+              <p className="text-2xl text-left font-bold  tracking-wide text-gray-500 leading-none mt-4 pr-10 break-all">
+                {NFT.owner && (
+                  <>
+                    {NFT.owner.split("")[0]}
+                    {NFT.owner.split("")[1]}
+                    {NFT.owner.split("")[2]}
+                    {NFT.owner.split("")[3]}...
+                    {NFT.owner.split("")[NFT.owner.length - 5]}
+                  </>
+                )}
               </p>
             </div>
 
