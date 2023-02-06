@@ -10,11 +10,11 @@ export default function NFTS() {
   const [isLoading, setIsLoading] = useState(false);
   const [nfts, setNfts] = useState([]);
 
-  const { address, contract, getNFTs } = useStateContext();
+  const { address, contract, getExploreNFTs } = useStateContext();
 
   const fetchNFTs = async () => {
     setIsLoading(true);
-    const data = await getNFTs();
+    const data = await getExploreNFTs();
 
     setNfts(data);
     setIsLoading(false);

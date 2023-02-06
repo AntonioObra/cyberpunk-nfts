@@ -34,8 +34,8 @@ export default function SingleNFT() {
   const showButton = () => {
     if (NFT.isShowcase) {
       return (
-        <p className="text-2xl text-left font-bold  tracking-wide text-violet-600 leading-none mt-4 pr-10">
-          This NFT is currently in the showcase.
+        <p className="text-2xl text-left font-bold  tracking-wide text-gray-200 leading-none mt-4 pr-10">
+          This NFT is currently in the showcase and is not available for sale.
         </p>
       );
     } else {

@@ -20,8 +20,6 @@ export const StateContextProvider = ({ children }) => {
 
   const publishNFT = async (form) => {
     try {
-      console.log(form);
-
       const data = await createNFT([
         address,
         form.title,
@@ -39,8 +37,6 @@ export const StateContextProvider = ({ children }) => {
   const getNFTs = async () => {
     const nfts = await contract.call("getNFTS");
 
-    console.log(nfts);
-
     const parsedNfts = nfts.map((nft, i) => ({
       id: i,
       owner: nft.owner,
@@ -53,21 +49,30 @@ export const StateContextProvider = ({ children }) => {
       isHidden: nft.isHidden,
     }));
 
-    const allNfts = parsedNfts.filter((nft) => !nft.isHidden || !nft.isListed);
+    return parsedNfts;
+  };
 
-    return allNfts;
+  const getExploreNFTs = async () => {
+    const allNfts = await getNFTs();
+    const exploreNfts = allNfts.filter((nft) => nft.isListed && !nft.isHidden);
+
+    return exploreNfts;
   };
 
   const getShowcaseNFTs = async () => {
     const allNfts = await getNFTs();
-    const showcaseNfts = allNfts.filter((nft) => nft.isShowcase);
+    const showcaseNfts = allNfts.filter(
+      (nft) => nft.isShowcase && !nft.isHidden
+    );
 
     return showcaseNfts;
   };
 
   const getUserNFTs = async () => {
     const allNfts = await getNFTs();
-    const userNfts = allNfts.filter((nft) => nft.owner === address);
+    const userNfts = allNfts.filter(
+      (nft) => nft.owner === address && !nft.isHidden
+    );
 
     return userNfts;
   };
@@ -116,6 +121,7 @@ export const StateContextProvider = ({ children }) => {
         getShowcaseNFTs,
         listNFT,
         unlistNFT,
+        getExploreNFTs,
       }}
     >
       {children}
