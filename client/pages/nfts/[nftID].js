@@ -40,13 +40,15 @@ export default function SingleNFT() {
         </h1>
         <div className="flex flex-col justify-between items-top md:flex-row space-y-10  mx-auto md:space-y-0 md:space-x-10   md:h-screen">
           <div className="flex w-full md:w-1/2 md:h-2/3">
-            <Image
-              src={NFT.image}
-              alt={NFT.name}
-              width={1000}
-              height={750}
-              className="w-full h-full object-cover rounded-3xl shadow-[0_20px_50px_rgba(109,_40,_217,_0.15)] "
-            />
+            {NFT.image && (
+              <Image
+                src={NFT.image}
+                alt={`NFT Image	${NFT.name}}`}
+                width={1000}
+                height={750}
+                className="w-full h-full object-cover rounded-3xl shadow-[0_20px_50px_rgba(109,_40,_217,_0.15)] "
+              />
+            )}
           </div>
           <div className="flex flex-col w-full justify-between items-start  md:w-1/2 md:h-1/5">
             <h1 className="hidden text-6xl  font-bold  tracking-wide text-white leading-none text-left md:block ">
@@ -88,22 +90,23 @@ export default function SingleNFT() {
             <p className="text-2xl text-left font-bold  tracking-wide text-gray-500 leading-none mt-4 pr-10">
               Price: {NFT.price} <span className="text-violet-600">ETH</span>
             </p>
-
-            {!address ? (
-              <button
-                className="border-2 border-blue-600 shadow-2xl shadow-blue-500/30 text-white font-bold py-4 px-16 rounded-full mt-10 w-fit hover:bg-blue-600 hover:shadow-blue-500/60 duration-300 transition-all md:py-4 md:px-10"
-                onClick={() => connect()}
-              >
-                Connect
-              </button>
-            ) : (
-              <button
-                className="border-2 border-rose-600 shadow-2xl shadow-rose-500/30 text-white font-bold py-4 px-16 rounded-full mt-10 w-fit hover:bg-rose-600 hover:shadow-rose-500/60 duration-300 transition-all md:py-4 md:px-10"
-                onClick={() => buyNFT(nftID)}
-              >
-                Buy
-              </button>
-            )}
+            <div className="flex justify-center mx-auto md:justify-end md:mx-0">
+              {!address ? (
+                <button
+                  className="border-2 border-blue-600 shadow-2xl shadow-blue-500/30 text-white font-bold py-4 px-28 rounded-full mt-10 w-fit hover:bg-blue-600 hover:shadow-blue-500/60 duration-300 transition-all md:py-4 md:px-16"
+                  onClick={() => connect()}
+                >
+                  Connect
+                </button>
+              ) : (
+                <button
+                  className="border-2 border-rose-600 shadow-2xl shadow-rose-500/30 text-white font-bold py-4 px-28 rounded-full mt-10 w-fit hover:bg-rose-600 hover:shadow-rose-500/60 duration-300 transition-all md:py-4 md:px-16"
+                  onClick={() => buyNFT(nftID)}
+                >
+                  Buy
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </section>
