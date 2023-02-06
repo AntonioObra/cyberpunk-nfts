@@ -34,21 +34,21 @@ export default function SingleNFT() {
 
       <Navbar />
 
-      <section className="container mx-auto mt-14 min-h-screen md:max-h-screen px-5 md:px-0">
-        <div className="flex flex-col justify-between items-top md:flex-row space-y-10  mx-auto md:space-y-0 md:space-x-10  min-h-screen md:h-screen">
-          <h1 className="text-6xl  font-bold  tracking-wide text-white leading-none text-left md:hidden">
-            {NFT.name}
-          </h1>
+      <section className="container mx-auto mt-10 min-h-screen md:max-h-screen px-5 md:px-0 md:mt-14">
+        <h1 className="text-6xl font-bold tracking-wide text-white leading-none text-left md:hidden mb-16">
+          {NFT.name}
+        </h1>
+        <div className="flex flex-col justify-between items-top md:flex-row space-y-10  mx-auto md:space-y-0 md:space-x-10   md:h-screen">
           <div className="flex w-full md:w-1/2 md:h-2/3">
             <Image
               src={NFT.image}
               alt={NFT.name}
               width={1000}
               height={750}
-              className="w-full h-full object-cover rounded-3xl shadow-[0_20px_50px_rgba(109,_40,_217,_0.15)]"
+              className="w-full h-full object-cover rounded-3xl shadow-[0_20px_50px_rgba(109,_40,_217,_0.15)] "
             />
           </div>
-          <div className="flex flex-col   w-full justify-between items-start  md:w-1/2">
+          <div className="flex flex-col w-full justify-between items-start  md:w-1/2 md:h-1/5">
             <h1 className="hidden text-6xl  font-bold  tracking-wide text-white leading-none text-left md:block ">
               {NFT.name}
             </h1>
@@ -67,8 +67,14 @@ export default function SingleNFT() {
                     {NFT.owner.split("")[0]}
                     {NFT.owner.split("")[1]}
                     {NFT.owner.split("")[2]}
-                    {NFT.owner.split("")[3]}...
+                    {NFT.owner.split("")[3]}
+                    {NFT.owner.split("")[4]}
+                    {NFT.owner.split("")[5]}...
                     {NFT.owner.split("")[NFT.owner.length - 5]}
+                    {NFT.owner.split("")[NFT.owner.length - 4]}
+                    {NFT.owner.split("")[NFT.owner.length - 3]}
+                    {NFT.owner.split("")[NFT.owner.length - 2]}
+                    {NFT.owner.split("")[NFT.owner.length - 1]}
                   </>
                 )}
               </p>
@@ -85,14 +91,14 @@ export default function SingleNFT() {
 
             {!address ? (
               <button
-                className="border-2 border-blue-600 shadow-2xl shadow-blue-500/30 text-white font-bold py-4 px-10 rounded-full mt-10 w-fit hover:bg-blue-600 hover:shadow-blue-500/60 duration-300 transition-all"
+                className="border-2 border-blue-600 shadow-2xl shadow-blue-500/30 text-white font-bold py-4 px-16 rounded-full mt-10 w-fit hover:bg-blue-600 hover:shadow-blue-500/60 duration-300 transition-all md:py-4 md:px-10"
                 onClick={() => connect()}
               >
                 Connect
               </button>
             ) : (
               <button
-                className="border-2 border-rose-600 shadow-2xl shadow-rose-500/30 text-white font-bold py-4 px-10 rounded-full mt-10 w-fit hover:bg-rose-600 hover:shadow-rose-500/60 duration-300 transition-all"
+                className="border-2 border-rose-600 shadow-2xl shadow-rose-500/30 text-white font-bold py-4 px-16 rounded-full mt-10 w-fit hover:bg-rose-600 hover:shadow-rose-500/60 duration-300 transition-all md:py-4 md:px-10"
                 onClick={() => buyNFT(nftID)}
               >
                 Buy
