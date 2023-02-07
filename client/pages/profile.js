@@ -100,15 +100,18 @@ export default function ProfilePage() {
           {address}
         </h1>
         <div className="flex justify-start space-x-10">
-          <Link href="/nfts">
-            <button className="bg-violet-600 border-2 border-violet-600 shadow-[0_20px_50px_rgba(109,_40,_217,_0.2)] text-white font-bold py-4 px-14 rounded-full mt-10 w-fit hover:border-2 hover:border-violet-600 hover:bg-transparent hover:shadow-[0_20px_50px_rgba(109,_40,_217,_0.5)] duration-300 transition-all md:px-10">
-              Explore
-            </button>
+          <Link
+            href="/nfts"
+            className="bg-violet-600 border-2 border-violet-600 shadow-[0_20px_50px_rgba(109,_40,_217,_0.2)] text-white font-bold py-4 px-14 rounded-full mt-10 w-fit hover:border-2 hover:border-violet-600 hover:bg-transparent hover:shadow-[0_20px_50px_rgba(109,_40,_217,_0.5)] duration-300 transition-all md:px-10"
+          >
+            Explore
           </Link>
-          <Link href="/create">
-            <button className="border-2 border-rose-600 shadow-2xl shadow-rose-500/30 text-white font-bold py-4 px-14 rounded-full mt-10 w-fit hover:bg-rose-600 hover:shadow-rose-500/60 duration-300 transition-all md:px-10">
-              Create
-            </button>
+
+          <Link
+            href="/create"
+            className="border-2 border-rose-600 shadow-2xl shadow-rose-500/30 text-white font-bold py-4 px-14 rounded-full mt-10 w-fit hover:bg-rose-600 hover:shadow-rose-500/60 duration-300 transition-all md:px-10"
+          >
+            Create
           </Link>
         </div>
       </section>

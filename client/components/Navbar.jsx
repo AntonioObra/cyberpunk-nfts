@@ -92,11 +92,9 @@ const Navbar = () => {
             <div className="flex justify-center items-center w-full py-3">
               {address ? (
                 <>
-                  <Link href="/profile">
-                    <button className="bg-blue-600 border-2 border-blue-600 shadow-[0_20px_50px_rgba(96,_165,_250,_0.2)] text-white font-bold py-3 px-16 rounded-full  w-full hover:border-2 hover:border-blue-600 hover:bg-transparent hover:shadow-[0_20px_50px_rgba(96,_165,_250,_0.5)] duration-300 transition-all ">
-                      Profile
-                    </button>
-                  </Link>
+                  <button className="bg-blue-600 border-2 border-blue-600 shadow-[0_20px_50px_rgba(96,_165,_250,_0.2)] text-white font-bold py-3 px-16 rounded-full  w-full hover:border-2 hover:border-blue-600 hover:bg-transparent hover:shadow-[0_20px_50px_rgba(96,_165,_250,_0.5)] duration-300 transition-all ">
+                    <Link href="/profile">Profile</Link>
+                  </button>
                 </>
               ) : (
                 <button
