@@ -26,6 +26,8 @@ export const StateContextProvider = ({ children }) => {
         form.description,
         form.price,
         form.image,
+        form.isListed,
+        false,
       ]);
 
       console.log("Contract call success", data);
