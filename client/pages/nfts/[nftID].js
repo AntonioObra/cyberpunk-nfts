@@ -2,12 +2,14 @@ import { useRouter } from "next/router";
 import { useStateContext } from "../../context";
 import { useEffect, useState } from "react";
 import Head from "next/head";
-import { Footer, Navbar } from "../../components";
+import { Footer, Loader, Navbar } from "../../components";
 import Image from "next/image";
 
 export default function SingleNFT() {
   const router = useRouter();
+
   const [NFT, setNFT] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const {
     getSingleNFT,
@@ -21,15 +23,54 @@ export default function SingleNFT() {
   const { nftID } = router.query;
 
   const fetchNFT = async () => {
+    setIsLoading(true);
     const data = await getSingleNFT(nftID);
     setNFT(data);
+    setIsLoading(false);
   };
 
   useEffect(() => {
     if (contract) fetchNFT();
   }, [address, contract]);
 
-  console.log(NFT);
+  const unlistNftHandler = async () => {
+    setIsLoading(true);
+
+    try {
+      await unlistNFT(nftID);
+      await fetchNFT();
+    } catch (error) {
+      console.log(error);
+    }
+
+    setIsLoading(false);
+  };
+
+  const listNftHandler = async () => {
+    setIsLoading(true);
+
+    try {
+      await listNFT(nftID);
+      await fetchNFT();
+    } catch (error) {
+      console.log(error);
+    }
+
+    setIsLoading(false);
+  };
+
+  const handleBuyNft = async () => {
+    setIsLoading(true);
+
+    try {
+      await buyNFT(nftID);
+      await fetchNFT();
+    } catch (error) {
+      console.log(error);
+    }
+
+    setIsLoading(false);
+  };
 
   const showButton = () => {
     if (NFT.isShowcase) {
@@ -53,7 +94,7 @@ export default function SingleNFT() {
           return (
             <button
               className="border-2 border-violet-600 shadow-2xl shadow-violet-500/30 text-white font-bold py-4 px-28 rounded-full mt-10 w-fit hover:bg-violet-600 hover:shadow-violet-500/60 duration-300 transition-all md:py-4 md:px-16"
-              onClick={() => unlistNFT(nftID)}
+              onClick={unlistNftHandler}
             >
               Unlist NFT
             </button>
@@ -62,7 +103,7 @@ export default function SingleNFT() {
           return (
             <button
               className="border-2 border-emerald-600 shadow-2xl shadow-emerald-500/30 text-white font-bold py-4 px-28 rounded-full mt-10 w-fit hover:bg-emerald-600 hover:shadow-emerald-500/60 duration-300 transition-all md:py-4 md:px-16"
-              onClick={() => listNFT(nftID)}
+              onClick={listNftHandler}
             >
               List NFT
             </button>
@@ -78,7 +119,7 @@ export default function SingleNFT() {
         return (
           <button
             className="border-2 border-rose-600 shadow-2xl shadow-rose-500/30 text-white font-bold py-4 px-28 rounded-full mt-10 w-fit hover:bg-rose-600 hover:shadow-rose-500/60 duration-300 transition-all md:py-4 md:px-16"
-            onClick={() => buyNFT(nftID)}
+            onClick={handleBuyNft}
           >
             Buy
           </button>
@@ -95,7 +136,7 @@ export default function SingleNFT() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      {isLoading && <Loader />}
       <Navbar />
 
       <section className="container mx-auto mt-10 min-h-screen md:max-h-screen px-5 md:px-0 md:mt-14">

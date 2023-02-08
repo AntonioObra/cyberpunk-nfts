@@ -96,15 +96,27 @@ export const StateContextProvider = ({ children }) => {
   };
 
   const buyNFT = async (id) => {
-    await contract.call("buyNft", id);
+    try {
+      await contract.call("buyNft", id);
+    } catch (error) {
+      console.log("Contract call failured", error);
+    }
   };
 
   const listNFT = async (id) => {
-    await contract.call("listNFT", id);
+    try {
+      await contract.call("listNFT", id);
+    } catch (error) {
+      console.log("Contract call failured", error);
+    }
   };
 
   const unlistNFT = async (id) => {
-    await contract.call("unlistNFT", id);
+    try {
+      await contract.call("unlistNFT", id);
+    } catch (error) {
+      console.log("Contract call failured", error);
+    }
   };
 
   return (
