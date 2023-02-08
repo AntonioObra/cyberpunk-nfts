@@ -68,6 +68,12 @@ export default function SingleNFT() {
             </button>
           );
         }
+      } else if (!NFT.isListed) {
+        return (
+          <p className="text-2xl text-left font-bold  tracking-wide text-gray-200 leading-none mt-4 pr-10">
+            This NFT is currently not for sale.
+          </p>
+        );
       } else {
         return (
           <button
