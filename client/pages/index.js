@@ -66,13 +66,13 @@ export default function Home() {
 
         <div className="absolute top-0 right-0 w-full h-screen z-0 lg:w-1/2 lg:h-screen lg:block">
           <Image
-            src="/images/profile.png"
+            src="/images/header2.jpg"
             alt="Header Image"
             width={1500}
             height={1500}
             className="object-cover h-full w-full z-0"
           />
-          <div className="absolute top-0 left-0 w-full h-full lg:h-1/2 z-0 bg-gradient-to-t from-[#0f0f0f] lg:bg-gradient-to-b lg:from-black to-black opacity-80 lg:opacity-100 lg:to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full lg:h-full z-0 bg-gradient-to-t from-[#0f0f0f] lg:bg-gradient-to-b lg:from-black to-black opacity-80 lg:opacity-100 lg:to-transparent"></div>
         </div>
       </section>
 
