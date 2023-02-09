@@ -8,11 +8,11 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="container mx-auto px-5 md:px-0 ">
-        <div className="flex justify-between items-center py-5 ">
+      <div className="container mx-auto px-5 md:px-0 mt-2">
+        <div className="flex justify-between items-center py-5">
           <div className="flex justify-start items-center space-x-10 z-50 ">
             <Link href="/">
-              <h5 className="font-semibold text-xl  leading-10 tracking-wide text-white hover:text-rose-600 duration-300 transition-all ">
+              <h5 className="font-semibold text-xl  leading-10 tracking-wide text-white hover:text-rose-600 duration-300 transition-all">
                 Cyberpunk NFTs
               </h5>
             </Link>
@@ -29,11 +29,11 @@ const Navbar = () => {
               </h5>
             </Link>
           </div>
-          <div className=" justify-end items-center z-10 hidden md:flex ">
+          <div className="justify-end items-center z-10 hidden md:flex">
             {address ? (
               <>
                 <Link href="/profile">
-                  <button className="bg-blue-600 border-2 border-blue-600 shadow-[0_20px_50px_rgba(96,_165,_250,_0.2)] text-white font-bold py-3 px-7 rounded-full  w-fit hover:border-2 hover:border-blue-600 hover:bg-transparent hover:shadow-[0_20px_50px_rgba(96,_165,_250,_0.5)] duration-300 transition-all ">
+                  <button className="bg-blue-600 border-2 border-blue-600 shadow-[0_20px_50px_rgba(96,_165,_250,_0.2)] text-white font-bold py-3 px-10 rounded-full  w-fit hover:border-2 hover:border-blue-600 hover:bg-transparent hover:shadow-[0_20px_50px_rgba(96,_165,_250,_0.5)] duration-300 transition-all">
                     Profile
                   </button>
                 </Link>
@@ -89,7 +89,7 @@ const Navbar = () => {
               </Link>
             </div>
 
-            <div className="flex justify-center items-center w-full py-3">
+            <div className="flex justify-center items-center w-full py-3 ">
               {address ? (
                 <>
                   <button className="bg-blue-600 border-2 border-blue-600 shadow-[0_20px_50px_rgba(96,_165,_250,_0.2)] text-white font-bold py-3 px-16 rounded-full  w-full hover:border-2 hover:border-blue-600 hover:bg-transparent hover:shadow-[0_20px_50px_rgba(96,_165,_250,_0.5)] duration-300 transition-all ">
