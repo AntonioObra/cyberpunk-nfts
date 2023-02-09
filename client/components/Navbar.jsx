@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="container mx-auto px-5 md:px-0 mt-2">
+      <div className="container mx-auto px-5 md:px-0 pt-2">
         <div className="flex justify-between items-center py-5">
           <div className="flex justify-start items-center space-x-10 z-50 ">
             <Link href="/">
