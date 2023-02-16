@@ -8,9 +8,9 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="container mx-auto px-5 md:px-0 pt-2">
+      <div className="container mx-auto ">
         <div className="flex justify-between items-center py-5">
-          <div className="flex justify-start items-center space-x-10 z-50 ">
+          <div className="flex justify-start items-center space-x-10 z-50  ">
             <Link href="/">
               <h5 className="font-semibold text-xl  leading-10 tracking-wide text-white hover:text-rose-600 duration-300 transition-all">
                 Cyberpunk NFTs

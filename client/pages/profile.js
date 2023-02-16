@@ -52,7 +52,7 @@ export default function ProfilePage() {
 
       <Navbar />
 
-      <section className="container mx-auto h-1/3 md:h-1/2 mt-10 px-5 md:px-0">
+      <section className="container mx-auto h-1/3 md:h-1/2 mt-10 ">
         <div className="relative h-full ">
           <Image
             src="/images/profileImage.jpg"

@@ -10,6 +10,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    container: {
+      // or have default horizontal padding
+      padding: "2rem",
+      // default breakpoints but with 40px removed
+    },
     extend: {
       fontFamily: {
         sans: ["Saira Condensed", "sans-serif"],
