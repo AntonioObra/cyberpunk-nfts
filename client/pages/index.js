@@ -36,8 +36,8 @@ export default function Home() {
       <Navbar />
 
       <section className="h-[100vh]">
-        <div className="container mx-auto relative">
-          <div className="absolute flex flex-col w-full mt-10 md:mt-24 md:top-0 md:left-0 md:w-1/2 2xl:w-2/3 z-10  ">
+        <div className="container mx-auto relative ">
+          <div className="absolute flex flex-col w-full mt-10 md:mt-24 md:top-0 md:left-0 md:w-1/2 2xl:w-2/3 z-10 pl-8 ">
             <h1 className="text-7xl  font-bold  tracking-wide text-white leading-relaxed text-center md:text-8xl 2xl:text-9xl md:text-left">
               Discover, collect <br></br> & sell NFTs
             </h1>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="container mx-auto pb-16 px-5 mt-24 md:px-5 md:mt-0 md:pb-32 ">
+    <div className="container mx-auto pb-16 mt-24  md:mt-0 md:pb-32 ">
       <div className="border-b-2 border-rose-500 my-10 md:my-16 "></div>
       <h2 className="text-5xl md:text-7xl xl:text-8xl font-semibold text-center md:text-right text-white">
         made by antonio obradovic
