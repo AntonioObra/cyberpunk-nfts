@@ -36,9 +36,9 @@ export default function Home() {
       <Navbar />
 
       <section className="h-[100vh]">
-        <div className="container mx-auto relative ">
-          <div className="absolute flex flex-col w-full mt-10 md:mt-24 md:top-0 md:left-0 md:w-1/2 2xl:w-2/3 z-10 pl-8 ">
-            <h1 className="text-7xl  font-bold  tracking-wide text-white leading-relaxed text-center md:text-8xl 2xl:text-9xl md:text-left">
+        <div className="container mx-auto relative  ">
+          <div className="absolute flex flex-col inset-0 bg-red-500 mx-0 mt-32 md:mt-24 md:top-0 md:left-0 md:w-1/2 2xl:w-2/3 z-10 md:pl-8 ">
+            <h1 className="text-6xl  font-bold  tracking-wide text-white md:leading-relaxed text-center md:text-8xl 2xl:text-9xl md:text-left">
               Discover, collect <br></br> & sell NFTs
             </h1>
             <p className="text-2xl text-center font-bold lowercase tracking-wide text-gray-300 leading-snug mt-9 mb-12 md:pr-10 md:text-left 2xl:w-2/3">
@@ -46,7 +46,7 @@ export default function Home() {
               style, powered by{" "}
               <span className="text-rose-600">Midjourney</span>
             </p>
-            <div className="flex justify-center md:justify-start space-x-12">
+            <div className="flex justify-center md:justify-start space-x-8 md:space-x-12">
               <Link
                 href="/nfts"
                 className="bg-violet-600 border-2 border-violet-600 shadow-[0_20px_50px_rgba(109,_40,_217,_0.2)] text-white font-bold py-4 px-12 rounded-full w-fit hover:border-2 hover:border-violet-600 hover:bg-transparent hover:shadow-[0_20px_50px_rgba(109,_40,_217,_0.5)] duration-300 transition-all"
@@ -64,7 +64,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="absolute top-0 right-0 w-full h-screen z-0 lg:w-full lg:h-screen lg:block">
+        <div className="absolute top-0 right-0 w-full h-screen z-0 lg:w-full lg:h-screen block">
           <Image
             src="/images/header3.jpg"
             alt="Header Image"
@@ -72,7 +72,7 @@ export default function Home() {
             height={2160}
             className="object-cover h-full w-full z-0 select-none	"
           />
-          <div className="absolute top-0 left-0 w-full h-1/4 lg:h-full z-0 bg-gradient-to-t from-[#0f0f0f] lg:bg-gradient-to-b  to-black opacity-80 lg:opacity-80 lg:to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full to-[#020202b7] z-0 bg-gradient-to-t from-black lg:bg-gradient-to-b   opacity-80 lg:opacity-80 "></div>
         </div>
       </section>
 

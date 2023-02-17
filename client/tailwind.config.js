@@ -12,7 +12,12 @@ module.exports = {
   theme: {
     container: {
       // or have default horizontal padding
-      padding: "2rem",
+      center: true,
+      padding: "0.75rem",
+      md: {
+        padding: "2rem",
+      },
+
       // default breakpoints but with 40px removed
     },
     extend: {
