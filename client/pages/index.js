@@ -38,7 +38,7 @@ export default function Home() {
       <section className="h-[100vh]">
         <div className="container mx-auto relative  ">
           <div className="absolute flex flex-col inset-0 bg-red-500 mx-0 mt-32 md:mt-24 md:top-0 md:left-0 md:w-1/2 2xl:w-2/3 z-10 md:pl-8 ">
-            <h1 className="text-6xl  font-bold  tracking-wide text-white md:leading-relaxed text-center md:text-8xl 2xl:text-9xl md:text-left">
+            <h1 className="text-6xl  font-bold  tracking-wide text-white text-center md:leading-none  md:text-8xl 2xl:text-9xl md:text-left">
               Discover, collect <br></br> & sell NFTs
             </h1>
             <p className="text-2xl text-center font-bold lowercase tracking-wide text-gray-300 leading-snug mt-9 mb-12 md:pr-10 md:text-left 2xl:w-2/3">

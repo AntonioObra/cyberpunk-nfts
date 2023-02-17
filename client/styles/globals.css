@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-[#0c0c0c];
+  @apply bg-[#0c0c0c] scrollbar-thin scrollbar-thumb-rose-700 scrollbar-track-rose-200 overflow-y-scroll;
 }
 
 ::selection {
